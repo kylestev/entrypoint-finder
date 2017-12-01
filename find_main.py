@@ -1,6 +1,7 @@
 from jawa import ClassFile
 from zipfile import ZipFile
 from pprint import pprint
+from json import dumps
 import sys
 
 
@@ -59,7 +60,7 @@ def main(args):
 
     file_name = args[0]
     with Jar(file_name, 'r') as jar:
-        pprint(list(find_entry_points(jar)))
+        print(dumps(list(find_entry_points(jar))))
 
 
 if __name__ == '__main__':
